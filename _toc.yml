@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+- file: nbs/intro_to_gps
+- file: nbs/regression
+- file: nbs/classification
+- file: nbs/collapsed_vi
+- file: nbs/uncollapsed_vi
+- file: nbs/barycentres
+- file: nbs/haiku
+- file: nbs/kernels
+- file: nbs/graph_kernels
+- file: nbs/tfp_integration
+- file: nbs/natgrads
+- file: nbs/yacht

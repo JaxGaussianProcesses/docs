@@ -1,0 +1,68 @@
+Traceback (most recent call last):
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/tompinder/miniforge3/envs/gpjax/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+n_data = 100
+n_realisations = 5
+noise_limits = (0.3, 0.5)
+xlims = (-5, 5)
+jitter = 1e-6
+n_inducing = 20
+
+true_kernel = gpx.kernels.Matern32()
+true_params = gpx.initialise(true_kernel, key)
+
+X = jnp.linspace(*xlims, n_data).reshape(-1, 1)
+true_kxx = true_kernel.gram(true_kernel, true_params.params, X) + jnp.eye(n_data) * jitter
+true_L = true_kxx.triangular_lower()
+latent_dist = dx.MultivariateNormalTri(jnp.zeros(n_data), true_L)
+group_y = latent_dist.sample(seed=key, sample_shape=(1,)).T
+
+
+noise_terms = dx.Uniform(*noise_limits).sample(seed= key, sample_shape=(n_realisations, ))
+
+# def add_sig(i):
+#     X = jnp.linspace(*xlims, n_data).reshape(-1, 1)
+#     group_y = tfp.distributions.MultivariateNormalTriL(np.zeros(n_data), tf.linalg.cholesky(Kxx)).sample(seed=tfp_seed + 10 * i)
+#     sample_y = group_y.numpy()
+#     return sample_y
+
+realisations = []
+individuals_ys = []
+for idx, (noise, skey) in enumerate(zip(noise_terms, jr.split(key, n_realisations))):
+    # Split the key
+    noise_vector = dx.Normal(0, noise).sample(seed=skey, sample_shape=group_y.shape)
+    y = group_y + noise_vector
+    individuals_ys.append(y)
+    realisations.append(gpx.Dataset(X=X, y=y))
+    plt.plot(X, y, color='tab:blue')
+plt.plot(X, group_y, color='tab:red')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 12[0m
+[1;32m      9[0m true_params [38;5;241m=[39m gpx[38;5;241m.[39minitialise(true_kernel, key)
+[1;32m     11[0m X [38;5;241m=[39m jnp[38;5;241m.[39mlinspace([38;5;241m*[39mxlims, n_data)[38;5;241m.[39mreshape([38;5;241m-[39m[38;5;241m1[39m, [38;5;241m1[39m)
+[0;32m---> 12[0m true_kxx [38;5;241m=[39m [43mtrue_kernel[49m[38;5;241;43m.[39;49m[43mgram[49m[43m([49m[43mtrue_kernel[49m[43m,[49m[43m [49m[43mtrue_params[49m[38;5;241;43m.[39;49m[43mparams[49m[43m,[49m[43m [49m[43mX[49m[43m)[49m [38;5;241m+[39m jnp[38;5;241m.[39meye(n_data) [38;5;241m*[39m jitter
+[1;32m     13[0m true_L [38;5;241m=[39m true_kxx[38;5;241m.[39mtriangular_lower()
+[1;32m     14[0m latent_dist [38;5;241m=[39m dx[38;5;241m.[39mMultivariateNormalTri(jnp[38;5;241m.[39mzeros(n_data), true_L)
+
+[0;31mTypeError[0m: gram() takes 3 positional arguments but 4 were given
+TypeError: gram() takes 3 positional arguments but 4 were given
+
