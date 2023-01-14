@@ -16,3 +16,4 @@ dm-haiku
 ipywidgets
 pandas
 scikit-learn
+gpjax
