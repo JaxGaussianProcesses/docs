@@ -4,6 +4,9 @@
 format: jb-book
 root: index
 chapters:
+- file: installation
+- file: design
+- file: contributing
 - file: nbs/intro_to_gps
 - file: nbs/regression
 - file: nbs/classification

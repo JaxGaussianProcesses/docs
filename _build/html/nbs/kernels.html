@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Kernel Guide &#8212; My sample book</title>
     
@@ -26,15 +26,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/gpjax_theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
@@ -59,7 +59,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Graph Kernels" href="graph_kernels.html" />
     <link rel="prev" title="Deep Kernel Learning" href="haiku.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -94,11 +94,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">My sample book</h1>
@@ -113,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Welcome to your Jupyter Book
+                    Welcome to GPJax!
                 </a>
             </li>
         </ul>
@@ -516,7 +513,7 @@ title="Print to PDF"
 <p>This notebook is a duplicate of the one found in the <a class="reference external" href="https://jaxkern.readthedocs.io/en/latest/nbs/kernels.html">JaxKern documentation</a>. It is included here for completeness.</p>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="kernel-guide">
-<h1>Kernel Guide<a class="headerlink" href="#kernel-guide" title="Permalink to this headline">#</a></h1>
+<h1>Kernel Guide<a class="headerlink" href="#kernel-guide" title="Permalink to this heading">#</a></h1>
 <p>In this guide, we introduce the kernels available in GPJax and demonstrate how to create custom ones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,7 +539,7 @@ title="Print to PDF"
 </div>
 </div>
 <section id="supported-kernels">
-<h2>Supported Kernels<a class="headerlink" href="#supported-kernels" title="Permalink to this headline">#</a></h2>
+<h2>Supported Kernels<a class="headerlink" href="#supported-kernels" title="Permalink to this heading">#</a></h2>
 <p>The following kernels are natively supported in GPJax.</p>
 <ul class="simple">
 <li><p>Matérn 1/2, 3/2 and 5/2.</p></li>
@@ -582,7 +579,7 @@ function draws per kernel.</p>
 </div>
 </div>
 <section id="active-dimensions">
-<h3>Active dimensions<a class="headerlink" href="#active-dimensions" title="Permalink to this headline">#</a></h3>
+<h3>Active dimensions<a class="headerlink" href="#active-dimensions" title="Permalink to this heading">#</a></h3>
 <p>By default, kernels operate over every dimension of the supplied inputs. In
 some use cases, it is desirable to restrict kernels to specific dimensions of
 the input data. We can achieve this by the <code class="docutils literal notranslate"><span class="pre">active</span> <span class="pre">dims</span></code> argument, which
@@ -635,7 +632,7 @@ Lengthscales: [1. 1. 1.]
 </section>
 </section>
 <section id="kernel-combinations">
-<h2>Kernel combinations<a class="headerlink" href="#kernel-combinations" title="Permalink to this headline">#</a></h2>
+<h2>Kernel combinations<a class="headerlink" href="#kernel-combinations" title="Permalink to this heading">#</a></h2>
 <p>The product or sum of two positive definite matrices yields a positive
 definite matrix. Consequently, summing or multiplying sets of kernels is a
 valid operation that can give rich kernel functions. In GPJax, sums of kernels
@@ -658,7 +655,7 @@ can be created by applying the <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x16d9ad5b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x16a0ad6d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/kernels_11_1.png" src="../_images/kernels_11_1.png" />
@@ -685,7 +682,7 @@ can be created by applying the <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x16dbc6df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x16a2c6ee0&gt;
 </pre></div>
 </div>
 <img alt="../_images/kernels_13_1.png" src="../_images/kernels_13_1.png" />
@@ -702,7 +699,7 @@ can be created by applying the <code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="custom-kernel">
-<h2>Custom kernel<a class="headerlink" href="#custom-kernel" title="Permalink to this headline">#</a></h2>
+<h2>Custom kernel<a class="headerlink" href="#custom-kernel" title="Permalink to this heading">#</a></h2>
 <p>GPJax makes the process of implementing kernels of your choice straightforward
 with two key steps:</p>
 <ol class="simple">
@@ -714,7 +711,7 @@ the excellent guide given in the PYMC3 documentation. We encourage curious
 readers to visit their notebook
 <a class="reference external" href="https://docs.pymc.io/pymc-examples/examples/gaussian_processes/GP-Circular.html">here</a>.</p>
 <section id="circular-kernel">
-<h3>Circular kernel<a class="headerlink" href="#circular-kernel" title="Permalink to this headline">#</a></h3>
+<h3>Circular kernel<a class="headerlink" href="#circular-kernel" title="Permalink to this heading">#</a></h3>
 <p>When the underlying space is polar, typical Euclidean kernels such as Matérn
 kernels are insufficient at the boundary as discontinuities will be present.
 This is due to the fact that for a polar space <span class="math notranslate nohighlight">\(\lvert 0, 2\pi\rvert=0\)</span> i.e.,
@@ -771,7 +768,7 @@ the Kernel’s parameter property which contains just one value <span class="mat
 initialise to 4 in the kernel’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
 </section>
 <section id="custom-parameter-bijection">
-<h3>Custom Parameter Bijection<a class="headerlink" href="#custom-parameter-bijection" title="Permalink to this headline">#</a></h3>
+<h3>Custom Parameter Bijection<a class="headerlink" href="#custom-parameter-bijection" title="Permalink to this heading">#</a></h3>
 <p>The constraint on <span class="math notranslate nohighlight">\(\tau\)</span> makes optimisation challenging with gradient descent.
 It would be much easier if we could instead parameterise <span class="math notranslate nohighlight">\(\tau\)</span> to be on the
 real line. Fortunately, this can be taken care of with GPJax’s <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">parameter</span></code>
@@ -800,7 +797,7 @@ where the lower bound is shifted by <span class="math notranslate nohighlight">\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qb/c3b8rx055411rkfvdyzty9_80000gn/T/ipykernel_99210/1443129282.py:9: DeprecatedWarning: add_parameter is deprecated as of 0.5.6 and will be removed in 0.6.0. Use method from jaxutils.config instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qb/c3b8rx055411rkfvdyzty9_80000gn/T/ipykernel_4205/1443129282.py:9: DeprecatedWarning: add_parameter is deprecated as of 0.5.6 and will be removed in 0.6.0. Use method from jaxutils.config instead.
   add_parameter(&quot;tau&quot;, bij)
 </pre></div>
 </div>
@@ -808,7 +805,7 @@ where the lower bound is shifted by <span class="math notranslate nohighlight">\
 </div>
 </section>
 <section id="using-our-polar-kernel">
-<h3>Using our polar kernel<a class="headerlink" href="#using-our-polar-kernel" title="Permalink to this headline">#</a></h3>
+<h3>Using our polar kernel<a class="headerlink" href="#using-our-polar-kernel" title="Permalink to this heading">#</a></h3>
 <p>We proceed to fit a GP with our custom circular kernel to a random sequence of points on a circle (see the <a class="reference external" href="https://gpjax.readthedocs.io/en/latest/nbs/regression.html">Regression notebook</a> for further details on this process).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -847,12 +844,12 @@ where the lower bound is shifted by <span class="math notranslate nohighlight">\
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cc72221287d54de8a8916171366b437a"}
+{"version_major": 2, "version_minor": 0, "model_id": "25685defea8d4cf8a17be202f2743532"}
 </script></div>
 </div>
 </section>
 <section id="prediction">
-<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">#</a></h3>
+<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this heading">#</a></h3>
 <p>We’ll now query the GP’s predictive posterior at linearly spaced novel inputs
 and illustrate the results.</p>
 <div class="cell docutils container">
@@ -895,7 +892,7 @@ and illustrate the results.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16dda4bb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x15ed5dbb0&gt;
 </pre></div>
 </div>
 <img alt="../_images/kernels_24_1.png" src="../_images/kernels_24_1.png" />
@@ -904,7 +901,7 @@ and illustrate the results.</p>
 </section>
 </section>
 <section id="system-configuration">
-<h2>System configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">#</a></h2>
+<h2>System configuration<a class="headerlink" href="#system-configuration" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> watermark
@@ -921,11 +918,11 @@ Python implementation: CPython
 Python version       : 3.9.15
 IPython version      : 8.8.0
 
-jaxkern   : 0.0.4
-gpjax     : 0.5.8
+jax       : 0.4.1
 matplotlib: 3.3.3
 distrax   : 0.1.2
-jax       : 0.4.1
+gpjax     : 0.5.8
+jaxkern   : 0.0.4
 
 Watermark: 2.3.1
 </pre></div>
@@ -937,7 +934,7 @@ Watermark: 2.3.1
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"b0b0f20165744f9081dc9cd4b90c2f7c": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "26a8798aaebb49a79f49cf2d3a533a47": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "deb3f6fbea824097959bf678c8faf9a7": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_b0b0f20165744f9081dc9cd4b90c2f7c", "max": 1000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_26a8798aaebb49a79f49cf2d3a533a47", "value": 1000.0}}, "f3c670e714324a8da7c563d6f6c88eab": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "a815829e2dc0465eb969a9781a976f84": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "ac2c895bf71e4eb38a46104ba06afb44": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_f3c670e714324a8da7c563d6f6c88eab", "placeholder": "\u200b", "style": "IPY_MODEL_a815829e2dc0465eb969a9781a976f84", "value": "100%"}}, "0475371618c3480e863bebea1c35ba24": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "415252cc7b504bd1832cc2e2ea1162f1": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "2fa7bca510d94112a6f504930b1910d4": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0475371618c3480e863bebea1c35ba24", "placeholder": "\u200b", "style": "IPY_MODEL_415252cc7b504bd1832cc2e2ea1162f1", "value": " 1000/1000 [00:00&lt;00:00, 21370.18it/s, Objective=26.28]"}}, "0b2f9cfb42224b22816f1c450f82cf83": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cc72221287d54de8a8916171366b437a": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_ac2c895bf71e4eb38a46104ba06afb44", "IPY_MODEL_deb3f6fbea824097959bf678c8faf9a7", "IPY_MODEL_2fa7bca510d94112a6f504930b1910d4"], "layout": "IPY_MODEL_0b2f9cfb42224b22816f1c450f82cf83"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"45ebaa5fcf4f4259bc5a1cc5eac046d6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3ac0d3c4b53e444ba92b76eaf2947fa9": {"model_name": "ProgressStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "4d8403d58574467db5b12fcae5853174": {"model_name": "FloatProgressModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_45ebaa5fcf4f4259bc5a1cc5eac046d6", "max": 1000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_3ac0d3c4b53e444ba92b76eaf2947fa9", "value": 1000.0}}, "d030cf8f810245e3bd126b0f194da300": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3f91a15a5efc4a20beddea0a11de1c4c": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e9b9b7e85f21461d95f0d8c3282b9a2b": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_d030cf8f810245e3bd126b0f194da300", "placeholder": "\u200b", "style": "IPY_MODEL_3f91a15a5efc4a20beddea0a11de1c4c", "value": "100%"}}, "66541e164603449784de0ae7b521b049": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "546de00975084e2dbc39c5d5beb309f0": {"model_name": "DescriptionStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "b937a7c07255447fbdbf51d4343df2d7": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_66541e164603449784de0ae7b521b049", "placeholder": "\u200b", "style": "IPY_MODEL_546de00975084e2dbc39c5d5beb309f0", "value": " 1000/1000 [00:00&lt;00:00, 21555.35it/s, Objective=26.28]"}}, "0b048df1e8d34a01adf449c777ecf345": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "25685defea8d4cf8a17be202f2743532": {"model_name": "HBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e9b9b7e85f21461d95f0d8c3282b9a2b", "IPY_MODEL_4d8403d58574467db5b12fcae5853174", "IPY_MODEL_b937a7c07255447fbdbf51d4343df2d7"], "layout": "IPY_MODEL_0b048df1e8d34a01adf449c777ecf345"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 

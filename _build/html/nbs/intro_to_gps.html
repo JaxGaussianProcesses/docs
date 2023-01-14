@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>New to Gaussian Processes? &#8212; My sample book</title>
     
@@ -26,15 +26,15 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/gpjax_theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
@@ -57,9 +57,9 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Regression" href="regression.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../index.html" />
+    <link rel="prev" title="Welcome to GPJax!" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -94,11 +94,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">My sample book</h1>
@@ -113,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Welcome to your Jupyter Book
+                    Welcome to GPJax!
                 </a>
             </li>
         </ul>
@@ -474,7 +471,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="new-to-gaussian-processes">
-<h1>New to Gaussian Processes?<a class="headerlink" href="#new-to-gaussian-processes" title="Permalink to this headline">#</a></h1>
+<h1>New to Gaussian Processes?<a class="headerlink" href="#new-to-gaussian-processes" title="Permalink to this heading">#</a></h1>
 <p>Fantastic that you’re here! This notebook is designed to be a gentle
 introduction to the mathematics of Gaussian processes (GPs). No prior
 knowledge of Bayesian inference or GPs is assumed, and this notebook is
@@ -483,7 +480,7 @@ its implications within probabilistic modelling. We then proceed to introduce
 the Gaussian random variable along with its multivariate form. We conclude by
 showing how this notion can be extended to GPs.</p>
 <section id="bayes-theorem">
-<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">#</a></h2>
+<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h2>
 <p>A probabilistic modelling task is comprised of an observed dataset
 <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> for which we construct a model. The parameters <span class="math notranslate nohighlight">\(\theta\)</span> of our
 model are unknown, and our goal is to conduct inference to determine their
@@ -555,7 +552,7 @@ posterior distribution, computing these statistics again requires a
 potentially intractable integral.</p>
 </section>
 <section id="gaussian-random-variables">
-<h2>Gaussian random variables<a class="headerlink" href="#gaussian-random-variables" title="Permalink to this headline">#</a></h2>
+<h2>Gaussian random variables<a class="headerlink" href="#gaussian-random-variables" title="Permalink to this heading">#</a></h2>
 <p>We begin our review with the simplest case; a univariate Gaussian random
 variable. For a random variable <span class="math notranslate nohighlight">\(y\)</span>, let <span class="math notranslate nohighlight">\(\mu\in\mathbb{R}\)</span> be a mean scalar
 and <span class="math notranslate nohighlight">\(\sigma^2\in\mathbb{R}_{&gt;0}\)</span> a variance scalar. If <span class="math notranslate nohighlight">\(y\)</span> is a Gaussian
@@ -595,7 +592,7 @@ We can plot three different parameterisations of this density.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x160af7760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x168d77a00&gt;
 </pre></div>
 </div>
 <img alt="../_images/intro_to_gps_1_1.png" src="../_images/intro_to_gps_1_1.png" />
@@ -776,7 +773,7 @@ the probability of two events, one from <span class="math notranslate nohighligh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.Ellipse at 0x163950970&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.patches.Ellipse at 0x16c4d3160&gt;
 </pre></div>
 </div>
 <img alt="../_images/intro_to_gps_5_1.png" src="../_images/intro_to_gps_5_1.png" />
@@ -835,7 +832,7 @@ In the following section, we will lift our presentation of Gaussian random
 variables to GPs.</p>
 </section>
 <section id="gaussian-processes">
-<h2>Gaussian processes<a class="headerlink" href="#gaussian-processes" title="Permalink to this headline">#</a></h2>
+<h2>Gaussian processes<a class="headerlink" href="#gaussian-processes" title="Permalink to this heading">#</a></h2>
 <p>When transitioning from Gaussian random variables to GP there is a shift in
 thought required to parse the forthcoming material. Firstly, to be consistent
 with the general literature, we hereon use <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> to denote an observed
@@ -918,7 +915,7 @@ notebook</a> to
 exploring the different GPs each kernel can yield.</p>
 </section>
 <section id="gaussian-process-regression">
-<h2>Gaussian process regression<a class="headerlink" href="#gaussian-process-regression" title="Permalink to this headline">#</a></h2>
+<h2>Gaussian process regression<a class="headerlink" href="#gaussian-process-regression" title="Permalink to this heading">#</a></h2>
 <p>When the likelihood function is a Gaussian distribution
 <span class="math notranslate nohighlight">\(p(y_i\,|\, f_i) = \mathcal{N}(y_i\,|\, f_i, \sigma_n^2)\)</span>,
 marginalising <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> from the joint posterior to obtain
@@ -969,7 +966,7 @@ objectives when identifying the optimal solution, as visualised below.</p>
 <p><img alt="" src="../_images/decomposed_mll.png" /></p>
 </section>
 <section id="conclusions">
-<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">#</a></h2>
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this heading">#</a></h2>
 <p>Within this notebook we have built up the concept of a GP, starting from
 Bayes’ theorem and the definition of a Gaussian random variable. Using the
 ideas presented in this notebook, the user should be in a position to dive
@@ -983,7 +980,7 @@ Terenin</a> provides a rigorous exposition of
 GPs that served as the inspiration for this notebook.</p>
 </section>
 <section id="system-configuration">
-<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">#</a></h2>
+<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> watermark
@@ -1000,11 +997,11 @@ Python implementation: CPython
 Python version       : 3.9.15
 IPython version      : 8.8.0
 
-matplotlib: 3.3.3
-seaborn   : 0.12.2
 distrax   : 0.1.2
-pandas    : 1.5.2
 jax       : 0.4.1
+pandas    : 1.5.2
+seaborn   : 0.12.2
+matplotlib: 3.3.3
 
 Watermark: 2.3.1
 </pre></div>
@@ -1045,7 +1042,7 @@ Watermark: 2.3.1
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Welcome to GPJax!</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="regression.html" title="next page">

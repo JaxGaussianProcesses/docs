@@ -16,5 +16,8 @@ blackjax>=0.8.2
 dm-haiku
 ipywidgets
 pandas
+sphinx-inline-tabs
+sphinx-tabs
+sphinx-design
 scikit-learn
 gpjax
