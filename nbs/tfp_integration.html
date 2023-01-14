@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/gpjax_theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -38,6 +40,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -113,11 +116,26 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Welcome to your Jupyter Book
+                    Welcome to GPJax!
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../design.html">
+   Design Principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contributing.html">
+   How can I contribute?
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="intro_to_gps.html">
    New to Gaussian Processes?
@@ -570,7 +588,7 @@ $<span class="math notranslate nohighlight">\(f(x) = \frac{\sin(\pi x)}{\pi x}, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f90b834fca0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3b40aa1880&gt;
 </pre></div>
 </div>
 <img alt="../_images/tfp_integration_3_1.png" src="../_images/tfp_integration_3_1.png" />
@@ -613,7 +631,7 @@ These functions are order preserving.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3049/3425936530.py:1: DeprecatedWarning: dict_array_coercion is deprecated as of 0.5.6 and will be removed in 0.6.0. Use method from jaxutils.config instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3023/3425936530.py:1: DeprecatedWarning: dict_array_coercion is deprecated as of 0.5.6 and will be removed in 0.6.0. Use method from jaxutils.config instead.
   dict_to_array, array_to_dict = dict_array_coercion(params)
 </pre></div>
 </div>
@@ -835,7 +853,7 @@ These functions are order preserving.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f90a0f32130&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3b40861730&gt;
 </pre></div>
 </div>
 <img alt="../_images/tfp_integration_29_1.png" src="../_images/tfp_integration_29_1.png" />
@@ -862,11 +880,11 @@ Python implementation: CPython
 Python version       : 3.9.16
 IPython version      : 8.8.0
 
-jax                   : 0.4.1
 jaxkern               : 0.0.4
-gpjax                 : 0.5.8
 matplotlib            : 3.3.3
+jax                   : 0.4.1
 tensorflow_probability: 0.19.0
+gpjax                 : 0.5.8
 
 Watermark: 2.3.1
 </pre></div>
